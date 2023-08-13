@@ -15,3 +15,16 @@ class TestItem:
         item.pay_rate = 0.5
         item.apply_discount()
         assert item.price == 50
+
+    def test_name(self, item):
+        item.name = 'Смартфон'
+        assert item.name == 'Смартфон'
+        item.name = '1234567890123'
+        assert item.name == '1234567890'
+
+    @staticmethod
+    def test_string_to_number():
+        assert Item.string_to_number('10.0') == 10
+        assert Item.string_to_number('10.9') == 10
+
+    def rest_instantiate_from_csv(cls,)
