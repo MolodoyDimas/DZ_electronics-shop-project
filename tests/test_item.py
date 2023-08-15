@@ -27,4 +27,6 @@ class TestItem:
         assert Item.string_to_number('10.0') == 10
         assert Item.string_to_number('10.9') == 10
 
-    def rest_instantiate_from_csv(cls,)
+    item1 = Item("Mac", 100000, 3)
+    assert repr(item1) == "Item('Mac', 100000, 3)"
+    assert str(item1) == 'Mac'
