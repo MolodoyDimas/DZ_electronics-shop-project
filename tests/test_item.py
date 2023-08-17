@@ -2,19 +2,20 @@
 import pytest
 
 from src.item import Item
+from src.phone import Phone
 
 class TestItem:
 
     @pytest.fixture
     def item(self):
-        return Item('молоко', 100, 3)
+        return Item('MI', 10000, 3)
 
     def test_calculate_total_price(self, item):
-        assert item.calculate_total_price() == 300
+        assert item.calculate_total_price() == 30000
     def test_apply_discount(self, item):
         item.pay_rate = 0.5
         item.apply_discount()
-        assert item.price == 50
+        assert item.price == 5000
 
     def test_name(self, item):
         item.name = 'Смартфон'
@@ -28,5 +29,11 @@ class TestItem:
         assert Item.string_to_number('10.9') == 10
 
     item1 = Item("Mac", 100000, 3)
+    item2 = Item("DEXP", 15000, 10)
+    test_phone = Phone('Nokia', 14999, 4, 2)
     assert repr(item1) == "Item('Mac', 100000, 3)"
     assert str(item1) == 'Mac'
+    assert item1 + item2 == 13
+
+
+
