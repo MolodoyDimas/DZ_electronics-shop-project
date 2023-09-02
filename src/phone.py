@@ -18,4 +18,3 @@ class Phone(Item):
         if isinstance(other, Phone):
             return self.quantity + other.quantity
 
-
