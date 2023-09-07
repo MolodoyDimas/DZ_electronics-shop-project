@@ -35,3 +35,12 @@ class TestItem:
     assert repr(item1) == "Item('Mac', 100000, 3)"
     assert str(item1) == 'Mac'
     assert item1 + item2 == 13
+
+    def test_instantiate_from_csv_error():
+        with pytest.raises(FileNotFoundError):
+            Item.instantiate_from_csv()
+
+    def test_instantiate_from_csv_damaged():
+        with pytest.raises(InstantiateCSVError):
+            Item.instantiate_from_csv()
+
