@@ -1,7 +1,8 @@
 """Здесь надо написать тесты с использованием pytest для модуля item."""
 import pytest
+import csv
 
-from src.item import Item
+from src.item import Item, InstantiateCSVError
 from src.phone import Phone
 
 class TestItem:
@@ -34,6 +35,3 @@ class TestItem:
     assert repr(item1) == "Item('Mac', 100000, 3)"
     assert str(item1) == 'Mac'
     assert item1 + item2 == 13
-
-
-
